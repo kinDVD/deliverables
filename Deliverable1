@@ -1,0 +1,84 @@
+
+using System.Xml;
+
+Console.WriteLine("Welcome to StalkStock- your restocking tool!");
+
+Console.WriteLine();
+
+Console.WriteLine("How many sodas have been sold today? Stock par is 100.");
+int SodaCount = int.Parse(Console.ReadLine());
+int totalSoda = 100 - SodaCount;
+
+if (totalSoda <= 100 && totalSoda >= 0)
+{
+    Console.WriteLine("There are " + totalSoda + " sodas left in stock.");
+}
+else if (totalSoda < 0)
+{
+    Console.WriteLine("That value is too low. Stock not adjusted.");
+}
+else if (totalSoda > 100)
+{
+    Console.WriteLine("That value is too high. Stock not adjusted.");
+}
+
+Console.WriteLine();
+
+Console.WriteLine("How many chips have been sold today? Stock par is 40.");
+int ChipCount = int.Parse(Console.ReadLine());
+int totalChip = 40 - ChipCount;
+
+if (totalChip <= 40 && totalChip >= 0)
+{
+    Console.WriteLine("There are " + totalChip + " chips left in stock.");
+}
+else if (totalChip < 0)
+{
+    Console.WriteLine("That value is too low. Stock not adjusted.");
+}
+else if (totalChip > 40)
+{
+    Console.WriteLine("That value is too high. Stock not adjusted.");
+}
+
+Console.WriteLine();
+
+Console.WriteLine("How much candy has been sold today? Stock par is 60.");
+int CandyCount = int.Parse(Console.ReadLine());
+int totalCandy = 60 - CandyCount;
+
+if (totalCandy <= 60 && totalCandy >= 0)
+{
+    Console.WriteLine("There is " + totalCandy + " candy left in stock.");
+}
+else if (totalCandy < 0)
+{
+    Console.WriteLine("That value is too low. Stock not adjusted.");
+}
+else if (totalCandy > 60)
+{
+    Console.WriteLine("That value is too high. Stock not adjusted.");
+}
+
+Console.WriteLine();
+
+Console.WriteLine("Thank you for filling out the values. Here's what needed to be stocked:");
+
+if (totalSoda <= 100 && totalSoda >= 0)
+{ 
+    Console.WriteLine("Soda needs to be restocked. Add " + SodaCount + " sodas."); 
+}
+
+if (totalChip <= 40 && totalChip >= 0)
+{
+    Console.WriteLine("Chips needs to be restocked. Add " + ChipCount + " chips.");
+}
+
+if (totalCandy <= 60 && totalCandy >= 0)
+{
+    Console.WriteLine("Candy needs to be restocked. Add " + CandyCount + " candy.");
+}
+
+Console.WriteLine();
+
+Console.WriteLine("Good luck!");
