@@ -1,0 +1,67 @@
+using System.Security.Cryptography;
+
+Console.WriteLine("Welcome to the COIN FLIP CHALLENGE!!!");
+
+Console.WriteLine();//linebreak
+
+Console.WriteLine("What is your name?");
+var name = Console.ReadLine();
+
+Console.WriteLine();//linebreak
+
+Console.WriteLine("Welcome " + name + ".");
+
+Console.WriteLine();//linebreak
+
+Console.WriteLine("Do you want to do the coinflip challenge? Yes/No");
+string choice = Console.ReadLine();
+int SCORE = 0;
+
+Console.WriteLine();//linebreak
+
+if (choice.Equals("yes", StringComparison.OrdinalIgnoreCase))//ensures input is not case sensitive
+{
+    for (int i = 1; i <= 5; i++)
+    {
+        Random coinflip = new Random();
+        int result = coinflip.Next(0, 2);//random binary number generator
+        
+        Console.WriteLine("Heads or tails?");
+        string Call = Console.ReadLine();
+        Console.WriteLine();//line break
+
+        if (choice.Equals("heads", StringComparison.OrdinalIgnoreCase))
+        {
+            if (result == 0)
+            {
+                Console.WriteLine("Correct!");
+                SCORE++;
+                Console.WriteLine();//line break
+            }
+            else
+            {
+                Console.WriteLine("Wrong!");
+                Console.WriteLine();//line break
+            }
+        }
+        else
+        {
+            if (result == 1)
+            {
+                Console.WriteLine("Correct!");
+                SCORE++;
+                Console.WriteLine();//line break
+            }
+            else
+            {
+                Console.WriteLine("Wrong!");
+                Console.WriteLine();//line break
+            }
+        }
+    }
+    Console.WriteLine("Thank you " + name + ". You got a score of " + SCORE + "!");
+}
+else
+{
+    Console.WriteLine("You are a coward " + name);
+}
